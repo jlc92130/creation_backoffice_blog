@@ -1,0 +1,33 @@
+html{
+  --light-grey-txt-color: #bbbbbb;
+  --dark-grey-txt-color: #383838;
+  --light-blue-txt-color: #00a99d;
+  --bg-light-grey-color: #8a8a8a;
+}
+
+section{
+  min-height:10rem;
+  padding:5rem 0;
+}
+
+.priceSub{
+  font-size:3rem;
+}
+
+.cents{
+  vertical-align: baseline;
+  position: relative;
+  top: -2em;
+  left: -0.6rem;
+  font-size:1rem;
+}
+
+.bg-light-blue{
+  background-color:var(--light-blue-txt-color);
+}
+.bg-dark-grey{
+  background-color:var(--dark-grey-txt-color);
+}
+.bg-light-grey{
+  background-color:var(--bg-light-grey-color);
+}
