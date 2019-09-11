@@ -5,13 +5,25 @@ html {
   --bg-light-grey-color: #8a8a8a;
 }
 
+@import url('https://fonts.googleapis.com/css?family=Raleway:500&display=swap');
+
 section{
   min-height:10rem;
   padding:5rem 0;
 }
 
+body{
+  font-family: 'Raleway', sans-serif;
+}
+
+.largeTitle{
+  font-size:5rem;
+  font-weight:bold;
+}
+
 .priceSub{
   font-size:3rem;
+  font-family: 'Raleway', sans-serif;
 }
 
 .cents{
@@ -32,6 +44,28 @@ section{
   background-color:var(--bg-light-grey-color);
 }
 
+.bg-grey{
+  background-color:#363636;
+}
+.bg-grey:hover{
+  background-color:#333333;
+  transition: background-color .3s linear;
+}
+
+.switch-logo{
+  background-color:white;
+  width:30px;
+  height:30px;
+}
+
+.rotate180 {
+  -webkit-transform:rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
 #copyright {
   color:white;
   text-align: center;
@@ -47,6 +81,11 @@ section{
 @media screen and (max-width: 600px) {
   #copyright {
     font-size: 8px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .btn {
+    font-size: 12px;
   }
 }
 
