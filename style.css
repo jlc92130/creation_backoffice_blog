@@ -20,6 +20,9 @@ body{
   font-size:5rem;
   font-weight:bold;
 }
+.titleBlue{
+  color:var(--light-blue-txt-color);
+}
 
 .priceSub{
   font-size:3rem;
@@ -51,6 +54,32 @@ body{
   background-color:#333333;
   transition: background-color .3s linear;
 }
+.bg-icons{
+  width:80px;
+  height:80px;
+}
+.bg-icons:hover{
+  background-color:var(--light-blue-txt-color);
+  transition: background-color .3s linear;
+}
+.bg-icons img{
+  margin-top: 50%;
+  transform: translateY(-50%);
+}
+.btn-white{
+  border:solid 1px var(--bg-light-grey-color);
+  color:var(--dark-grey-txt-color);
+  font-size:0.8rem;
+}
+.btn-white:hover{
+  background-color:var(--light-blue-txt-color);
+  color:white;
+  transition: background-color, color .3s linear;
+}
+.txt-light-grey{
+  color:var(--light-grey-txt-color);
+}
+
 
 .switch-logo{
   background-color:white;
@@ -86,6 +115,11 @@ body{
 @media screen and (max-width: 992px) {
   .btn {
     font-size: 12px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .hideSmall {
+    display:none;
   }
 }
 
