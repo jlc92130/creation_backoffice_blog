@@ -1,5 +1,6 @@
 html {
   --light-grey-txt-color: #bbbbbb;
+  --interval-grey-txt-color: #484848;
   --dark-grey-txt-color: #383838;
   --light-blue-txt-color: #00a99d;
   --bg-light-grey-color: #8a8a8a;
@@ -17,7 +18,11 @@ body{
 }
 
 .largeTitle{
-  font-size:5rem;
+  font-size:4rem;
+  font-weight:bold;
+}
+.smallText{
+  font-size:.8rem;
   font-weight:bold;
 }
 .titleBlue{
@@ -79,6 +84,9 @@ body{
 .txt-light-grey{
   color:var(--light-grey-txt-color);
 }
+.txt-interval-grey{
+  color:var(--interval-grey-txt-color);
+}
 
 
 .switch-logo{
@@ -123,6 +131,12 @@ body{
 @media screen and (max-width: 1200px) {
   .hideSmall {
     display:none;
+  }
+  .centered-S{
+    text-align:center; !important;
+  }
+  .largerMT-S{
+    margin-top:20px !important;
   }
 }
 
