@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 html{
   --light-grey-txt-color: #bbbbbb;
   --dark-grey-txt-color: #383838;
@@ -30,4 +31,31 @@ section{
 }
 .bg-light-grey{
   background-color:var(--bg-light-grey-color);
+=======
+#copyright {
+  color:white;
+  text-align: center;
+  background-color:#333333;
+}
+
+@media screen and (min-width: 601px) {
+  #copyright {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 600px) {
+  #copyright {
+    font-size: 8px;
+  }
+}
+#header img {
+  margin: 3% 0px 3% 15%;
+  width: 40%;
+  height: auto;
+}
+#header {
+  background-image: url(img/header_logo.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+>>>>>>> secdeux
 }
