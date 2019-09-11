@@ -1,4 +1,4 @@
-html{
+html {
   --light-grey-txt-color: #bbbbbb;
   --dark-grey-txt-color: #383838;
   --light-blue-txt-color: #00a99d;
@@ -30,6 +30,7 @@ section{
 }
 .bg-light-grey{
   background-color:var(--bg-light-grey-color);
+}
 
 #copyright {
   color:white;
@@ -42,16 +43,19 @@ section{
     font-size: 16px;
   }
 }
+
 @media screen and (max-width: 600px) {
   #copyright {
     font-size: 8px;
   }
 }
+
 #header img {
   margin: 3% 0px 3% 15%;
   width: 40%;
   height: auto;
 }
+
 #header {
   background-image: url(img/header_logo.png);
   background-repeat: no-repeat;
