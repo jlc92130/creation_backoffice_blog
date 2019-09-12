@@ -168,3 +168,9 @@ body{
 .nav-link{
   font-weight: bold;
 }
+
+.nav-link:hover{
+  color:white !important;
+  background-color:#00a99d !important;
+  border-radius:4px !important;
+}
