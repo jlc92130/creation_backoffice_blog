@@ -4,11 +4,13 @@ $(document).ready(function(){
         if (this.hash !== "") {
             event.preventDefault();
             var hash = this.hash;
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 800, function(){
-                window.location.hash = hash;
-            });
+            if ((hash.includes("carousel") || hash.includes("Carousel")) == false) {
+              $('html, body').animate({
+                  scrollTop: $(hash).offset().top
+              }, 800, function(){
+                  window.location.hash = hash;
+              });
+            }
         }
     });
 });
@@ -75,6 +77,7 @@ $('.carousel .carousel-item').each(function(){
         next.children(':first-child').clone().appendTo($(this));
       }
 });
+<<<<<<< HEAD
 
 /* Progress bar */
 $(function() {
@@ -136,3 +139,5 @@ window.onresize = function(event) {
       }
   }
 };
+=======
+>>>>>>> menu

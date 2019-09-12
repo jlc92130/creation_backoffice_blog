@@ -241,3 +241,20 @@ body{
   background-color:#00a99d !important;
   border-radius:4px !important;
 }
+
+#logoMedia{
+  padding-top:50px;
+}
+
+#iconMedia a{
+  padding:10px;
+  min-width:40px;
+  border: 1px solid;
+  border-radius: 5px;
+  border-color:#5f5f5f;
+  color:#e4e4e4;
+  background-color:#383838;
+  margin-right:10px;
+  margin-top:10px;
+  text-decoration:none;
+}
