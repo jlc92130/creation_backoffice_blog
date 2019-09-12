@@ -1,6 +1,7 @@
 html {
   --light-grey-txt-color: #bbbbbb;
   --interval-grey-txt-color: #484848;
+  --bg-grey-color:#363636;
   --dark-grey-txt-color: #383838;
   --light-blue-txt-color: #00a99d;
   --bg-light-grey-color: #8a8a8a;
@@ -44,6 +45,9 @@ body{
 }
 .bg-light-grey{
   background-color:var(--bg-light-grey-color);
+}
+.bg-grey-color{
+  background-color:var(--bg-grey-color);
 }
 
 .bg-grey{
@@ -156,4 +160,39 @@ body{
   background-image: url(img/header_logo.png);
   background-repeat: no-repeat;
   background-size: 100% 100%;
+}
+
+
+/* CAROUSEL */
+@media (max-width: 992px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 992px) {
+    .carousel-inner .carousel-item-right.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(16.6%);
+    }
+
+    .carousel-inner .carousel-item-left.active,
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-16.6%);
+    }
+}
+
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left{
+    transform: translateX(0);
 }
