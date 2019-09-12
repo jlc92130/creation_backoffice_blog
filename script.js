@@ -127,14 +127,14 @@ function leaveFeature(el){
 var elements = document.getElementsByClassName('img-element');
 
 window.onresize = function(event) {
-  if(document.body.clientWidth <= 588 && document.body.clientWidth >= 420)
+  if(document.body.clientWidth <= 576 && document.body.clientWidth >= 419){
     for(var i=0 ; i<elements.length ; i++){
       elements[i].classList.remove("px-0");
     }
+  }
   else {
-      for(var i=0 ; i<elements.length ; i++){
-        if(!elements[i].classList.contains("px-0"))
-          elements[i].classList.add("px-0");
-      }
+    for(var i=0 ; i<elements.length ; i++){
+      elements[i].classList.add("px-0");
+    }
   }
 };
