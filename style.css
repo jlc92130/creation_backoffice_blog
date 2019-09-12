@@ -85,11 +85,20 @@ body{
   color:var(--interval-grey-txt-color);
 }
 
-
-.switch-logo{
+.button-commentary{
+  display:inline-block;
+  width:28px;
+  height:28px;
+  line-height:28px;
   background-color:white;
-  width:30px;
-  height:30px;
+  border-radius:5px;
+  color:var(--light-blue-txt-color);
+  cursor:pointer;
+}
+.button-commentary:hover{
+  background-color:var(--interval-grey-txt-color);
+  color:white;
+  transition: background-color, color .3s linear;
 }
 
 .rotate180 {
