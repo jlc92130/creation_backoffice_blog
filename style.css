@@ -5,6 +5,7 @@ html {
   --dark-grey-txt-color: #383838;
   --light-blue-txt-color: #00a99d;
   --bg-light-grey-color: #8a8a8a;
+  --txt-title-grey:#606060;
 }
 
 @import url('https://fonts.googleapis.com/css?family=Raleway:500&display=swap');
@@ -19,6 +20,9 @@ body{
 }
 .smallText{
   font-size:.8rem;
+}
+.mediumText{
+  font-size:.9rem;
 }
 .titleBlue{
   color:var(--light-blue-txt-color);
@@ -37,6 +41,9 @@ body{
   font-size:1rem;
 }
 
+.border-light-blue{
+  border-color:var(--light-blue-txt-color);
+}
 .bg-light-blue{
   background-color:var(--light-blue-txt-color);
 }
@@ -88,6 +95,9 @@ body{
 .txt-interval-grey{
   color:var(--interval-grey-txt-color);
 }
+.txt-title-grey{
+  color:var(--txt-title-grey);
+}
 
 .button-commentary{
   display:inline-block;
@@ -111,6 +121,15 @@ body{
   -ms-transform: rotate(180deg);
   -o-transform: rotate(180deg);
   transform: rotate(180deg);
+}
+
+.img_feature_1{
+  margin-top:-72px;
+}
+.logo_feature{
+  margin-top:-58px;
+  width:20px;
+  height:20px;
 }
 
 #copyright {
@@ -238,4 +257,31 @@ body{
   margin-right:10px;
   margin-top:10px;
   text-decoration:none;
+}
+
+#illuList img{
+  padding:1px 0.5px 0px 0.5px;
+  border-radius: 5px;
+  width:100%;
+  weight:100%;
+}
+#illuList span{
+  padding:0px !important;
+}
+
+@media screen and (max-width: 575px) {
+     #illuList img {
+       width:200px;
+       height:200px;
+     }
+}
+
+#viewAW{
+  font-weight:bold;
+  font-size:12px;
+  color:white;
+  border-radius:5px;
+  padding: 10px 25% 10px 25%;
+  text-decoration:none;
+  background-color:#00a99d;
 }
