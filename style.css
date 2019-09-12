@@ -1,6 +1,7 @@
 html {
   --light-grey-txt-color: #bbbbbb;
   --interval-grey-txt-color: #484848;
+  --bg-grey-color:#363636;
   --dark-grey-txt-color: #383838;
   --light-blue-txt-color: #00a99d;
   --bg-light-grey-color: #8a8a8a;
@@ -45,6 +46,9 @@ body{
 .bg-light-grey{
   background-color:var(--bg-light-grey-color);
 }
+.bg-grey-color{
+  background-color:var(--bg-grey-color);
+}
 
 .bg-grey{
   background-color:#363636;
@@ -85,11 +89,20 @@ body{
   color:var(--interval-grey-txt-color);
 }
 
-
-.switch-logo{
+.button-commentary{
+  display:inline-block;
+  width:28px;
+  height:28px;
+  line-height:28px;
   background-color:white;
-  width:30px;
-  height:30px;
+  border-radius:5px;
+  color:var(--light-blue-txt-color);
+  cursor:pointer;
+}
+.button-commentary:hover{
+  background-color:var(--interval-grey-txt-color);
+  color:white;
+  transition: background-color, color .3s linear;
 }
 
 .rotate180 {
@@ -149,6 +162,41 @@ body{
   background-size: 100% 100%;
 }
 
+
+/* CAROUSEL */
+@media (max-width: 992px) {
+    .carousel-inner .carousel-item > div {
+        display: none;
+    }
+    .carousel-inner .carousel-item > div:first-child {
+        display: block;
+    }
+}
+
+.carousel-inner .carousel-item.active,
+.carousel-inner .carousel-item-next,
+.carousel-inner .carousel-item-prev {
+    display: flex;
+    justify-content: center;
+}
+
+@media (min-width: 992px) {
+    .carousel-inner .carousel-item-right.active,
+    .carousel-inner .carousel-item-next {
+      transform: translateX(16.6%);
+    }
+
+    .carousel-inner .carousel-item-left.active,
+    .carousel-inner .carousel-item-prev {
+      transform: translateX(-16.6%);
+    }
+}
+
+.carousel-inner .carousel-item-right,
+.carousel-inner .carousel-item-left{
+    transform: translateX(0);
+}
+
 #menu{
   border-bottom: 2px solid rgba(0,0,0,0.3);
 }
@@ -173,4 +221,21 @@ body{
   color:white !important;
   background-color:#00a99d !important;
   border-radius:4px !important;
+}
+
+#logoMedia{
+  padding-top:50px;
+}
+
+#iconMedia a{
+  padding:10px;
+  min-width:40px;
+  border: 1px solid;
+  border-radius: 5px;
+  border-color:#5f5f5f;
+  color:#e4e4e4;
+  background-color:#383838;
+  margin-right:10px;
+  margin-top:10px;
+  text-decoration:none;
 }
