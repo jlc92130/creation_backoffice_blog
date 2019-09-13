@@ -143,3 +143,22 @@ window.onresize = function(event) {
 function acceptCookie(){
   document.getElementById('cookieBar').style.display = "none";
 }
+
+/* Scroll top Button */
+mybutton = document.getElementById("myBtn");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  $('body,html').animate({
+        scrollTop : 0
+    }, 500);
+}
