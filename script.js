@@ -138,3 +138,8 @@ window.onresize = function(event) {
     }
   }
 };
+
+/* Accept cookies */
+function acceptCookie(){
+  document.getElementById('cookieBar').style.display = "none";
+}

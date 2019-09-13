@@ -126,13 +126,19 @@ body{
 .img_feature_1{
   margin-top:-72px;
 }
+
 .logo_feature{
   margin-top:-58px;
   width:20px;
   height:20px;
 }
+
 .m-top{
   margin-top: 3rem !important;
+}
+
+button.bg-light-blue:hover{
+  background-color:#4cc2ba;
 }
 
 #copyright {
@@ -143,6 +149,39 @@ body{
   padding-bottom:1px;
 }
 
+#cookieBar{
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:50px;
+  line-height:50px;
+}
+
+#contactForm{
+  top:80px;
+  left:150px;
+  width:300px;
+}
+
+textarea{
+  resize:none;
+}
+input::placeholder, textarea::placeholder{
+  font-size:.8rem;
+  font-style:italic;
+}
+
+@media screen and (max-width: 414px) {
+  #cookieBar{
+    line-height:12px !important;
+    font-size:.6rem !important;
+  }
+  #cookieBar button{
+    font-size:.6rem !important;
+    padding:2px;
+  }
+}
 @media screen and (min-width: 601px) {
   #copyright p {
     font-size: 14px;
@@ -153,6 +192,12 @@ body{
   #copyright p{
     font-size: 7px;
     padding-top:20px;
+  }
+}
+@media screen and (max-width: 662px) and (min-width:415px) {
+  #cookieBar{
+    line-height:16px !important;
+    font-size:.7rem !important;
   }
 }
 @media screen and (max-width: 992px) {
@@ -172,6 +217,11 @@ body{
   }
   .m-top{
     margin-top:0 !important;
+  }
+}
+@media screen and (max-width: 1312px){
+  #cookieBar{
+    line-height:24px;
   }
 }
 
