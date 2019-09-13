@@ -124,9 +124,9 @@ function leaveFeature(el){
 
 
 /* Fix features bug */
-var elements = document.getElementsByClassName('img-element');
-
 window.onresize = function(event) {
+  var elements = document.getElementsByClassName('img-element');
+
   if(document.body.clientWidth <= 576 && document.body.clientWidth >= 419){
     for(var i=0 ; i<elements.length ; i++){
       elements[i].classList.remove("px-0");
