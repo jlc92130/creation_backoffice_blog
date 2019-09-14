@@ -317,7 +317,7 @@ body{
   background-color: #1ca399;
   transform: rotateY(180deg);
 }
-.flip-card-back a{
+.flip-card-back span{
   position:relative;
   background-image: url("img/backicon.png");
   background-size:100%;
