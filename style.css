@@ -366,13 +366,13 @@ input::placeholder, textarea::placeholder{
 }
 
 .portfolio a{
-  color:#00a99d;
+  color:white;
 }
 .portfolio a:hover{
-  color:#8e8e8e;
+  color:#00a99d;
 }
-.portfolio a img:hover{
-  background-image:url('img/backiconh.png');
+.portfolio a:hover img{
+  content:url('img/backiconh.png');
 }
 
 .pos{
@@ -396,13 +396,28 @@ input::placeholder, textarea::placeholder{
 }
 
 .infosPortf{
-  width:100%;
-  /* position: absolute; */
-  /* top: 60%; */
-  /* left: 55%;/ */
-  /* transform: translate(-50%, -50%); */
+  width:85%;
+  top:50%;
+  position: absolute;
+}
+.infosPortf col{
+  padding:0px !important;
+}
+.infosPortf p{
+  margin-bottom:0px;
+  color:white;
 }
 
 .search{
   margin-left:-10px;
+}
+
+.bold{
+  font-weight:bold;
+}
+.portfolio .hov{
+  display:none;
+}
+.portfolio:hover .hov{
+  display:block;
 }
