@@ -124,9 +124,9 @@ function leaveFeature(el){
 
 
 /* Fix features bug */
-var elements = document.getElementsByClassName('img-element');
-
 window.onresize = function(event) {
+  var elements = document.getElementsByClassName('img-element');
+
   if(document.body.clientWidth <= 576 && document.body.clientWidth >= 419){
     for(var i=0 ; i<elements.length ; i++){
       elements[i].classList.remove("px-0");
@@ -138,3 +138,27 @@ window.onresize = function(event) {
     }
   }
 };
+
+/* Accept cookies */
+function acceptCookie(){
+  document.getElementById('cookieBar').style.display = "none";
+}
+
+/* Scroll top Button */
+mybutton = document.getElementById("myBtn");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+function topFunction() {
+  $('body,html').animate({
+        scrollTop : 0
+    }, 500);
+}
