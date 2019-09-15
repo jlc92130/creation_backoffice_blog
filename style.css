@@ -259,16 +259,6 @@ body{
   text-decoration:none;
 }
 
-#illuList img{
-  padding:1px 0.5px 0px 0.5px;
-  border-radius: 5px;
-  width:100%;
-  weight:100%;
-}
-#illuList span{
-  padding:0px !important;
-}
-
 @media screen and (max-width: 575px) {
      #illuList img {
        width:200px;
@@ -286,48 +276,54 @@ body{
   background-color:#00a99d;
 }
 
-/* Flip card portfolio */
-.flip-card {
-  background-color: transparent;
-  width: 250px;
-  height: 200px;
-  perspective: 1000px;
+.portfolio{
+  background-color:#8e8e8e;
+  border:0.5px solid white;
+  height:200px;
+  border-radius:5px;
 }
-.flip-card-inner {
+.portfolio:hover{
+  background-color:#00a99d;
+}
+
+.portfolio a{
+  color:#00a99d;
+}
+.portfolio a:hover{
+  color:#8e8e8e;
+}
+.portfolio a img:hover{
+  background-image:url('img/backiconh.png');
+}
+
+.pos{
   position: relative;
-  width: 100%;
-  height: 100%;
   text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-}
-.flip-card-front {
-  color: black;
-}
-.flip-card-back {
-  background-color: #1ca399;
-  transform: rotateY(180deg);
-}
-.flip-card-back span{
-  position:relative;
-  background-image: url("img/backicon.png");
-  background-size:100%;
-  padding:15px;
-  /* margin: 10% 0px 0px -20px; */
-  background-repeat:no-repeat;
-  text-decoration: none;
   color: white;
 }
-.flip-card-back a:hover{
-  color: #1ca399;
-  background-image: url("img/backiconh.png");
+
+.centered{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.iconsPortf{
+  position: absolute;
+  top: 30%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+}
+
+.infosPortf{
+  width:100%;
+  /* position: absolute; */
+  /* top: 60%; */
+  /* left: 55%;/ */
+  /* transform: translate(-50%, -50%); */
+}
+
+.search{
+  margin-left:-10px;
 }
