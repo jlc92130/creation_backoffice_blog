@@ -6,9 +6,9 @@ $(document).ready(function(){
             var hash = this.hash;
             if ((hash.includes("carousel") || hash.includes("Carousel")) == false) {
               $('html, body').animate({
-                  scrollTop: $(hash).offset().top
+                  scrollTop: ($(hash).offset().top - $('#menu').innerHeight())
               }, 800, function(){
-                  window.location.hash = hash;
+                  window.location.hash = ($(hash).offset().top - $('#menu').innerHeight());
               });
             }
         }
@@ -47,11 +47,33 @@ function showCommentaries(type){
     if(i == commentaryToShow){
       commentaries[i].classList.remove('d-none');
       commentaries[i].classList.add('d-block');
+      show(commentaries[i]);
     }
     else{
       commentaries[i].classList.remove('d-block');
       commentaries[i].classList.add('d-none');
     }
+  }
+}
+
+/* Display an element by increasing his opacity */
+function show(showEle){
+  showEle.style.opacity = 0;
+  var i = 0;
+  fadeIn(showEle,i);
+
+  function fadeIn(showEle,i){
+    i = i + 0.05;
+    seto(showEle,i);
+    if (i<1){
+      setTimeout(function(){
+        fadeIn(showEle,i);
+      }, 40);
+    }
+  }
+
+  function seto(el,i){
+    el.style.opacity = i;
   }
 }
 
@@ -80,9 +102,7 @@ $('.carousel .carousel-item').each(function(){
 
 /* Progress bar */
 $(function() {
-
   $(".progress").each(function() {
-
     var value = $(this).attr('data-value');
     var left = $(this).find('.progress-left .progress-bar');
     var right = $(this).find('.progress-right .progress-bar');
@@ -95,15 +115,11 @@ $(function() {
         left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
       }
     }
-
   })
 
   function percentageToDegrees(percentage) {
-
     return percentage / 100 * 360
-
   }
-
 });
 
 
@@ -162,3 +178,51 @@ function topFunction() {
         scrollTop : 0
     }, 500);
 }
+
+/* Number count */
+var observer = new IntersectionObserver(function(entries) {
+	if(entries[0].isIntersecting === true){
+    $('.countNumber').each(function () {
+        $(this).prop('Counter',0).animate({
+            Counter : $(this).data('value')
+        }, {
+            duration: $(this).data('value') * 15,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
+    });
+
+    observer.unobserve(document.querySelector("#fact"));
+  }
+}, { threshold: [1] });
+
+observer.observe(document.querySelector("#fact"));
+
+
+/* Navbar sticky */
+var padding_apply = false;
+
+$( window ).on("load", function() {
+  window.onscroll = function() {myFunction()};
+
+  var navbar = document.getElementById("menu");
+  var sticky = navbar.offsetTop;
+
+  function myFunction() {
+    if (window.pageYOffset  >= sticky) {
+      navbar.classList.add("sticky");
+      if(padding_apply == false){
+        $('body').css('padding-top', $('#menu').innerHeight());
+        padding_apply = true;
+      }
+    } else {
+      navbar.classList.remove("sticky");
+      if(padding_apply == true){
+        $('body').css('padding-top', 0);
+        padding_apply = false;
+      }
+    }
+  }
+});
