@@ -317,11 +317,11 @@ input::placeholder, textarea::placeholder{
   border-color: #606060;
 }
 
-.nav-link{
+.nav-item .nav-link{
   font-weight: bold;
 }
 
-.nav-link:hover{
+.nav-item .nav-link:hover{
   color:white !important;
   background-color:#00a99d !important;
   border-radius:4px !important;
@@ -342,4 +342,88 @@ input::placeholder, textarea::placeholder{
   margin-right:10px;
   margin-top:10px;
   text-decoration:none;
+}
+
+@media screen and (max-width: 575px) {
+     #illuList img {
+       width:200px;
+       height:200px;
+     }
+}
+
+#viewAW{
+  font-weight:bold;
+  font-size:12px;
+  color:white;
+  border-radius:5px;
+  padding: 10px 25% 10px 25%;
+  text-decoration:none;
+  background-color:#00a99d;
+}
+
+.portfolio{
+  background-color:#8e8e8e;
+  border:0.5px solid white;
+  height:200px;
+  border-radius:5px;
+}
+.portfolio:hover{
+  background-color:#00a99d;
+}
+
+.portfolio a{
+  color:white;
+}
+.portfolio a:hover{
+  color:#00a99d;
+}
+.portfolio a:hover img{
+  content:url('img/backiconh.png');
+}
+
+.pos{
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.centered{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.iconsPortf{
+  position: absolute;
+  top: 30%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+}
+
+.infosPortf{
+  width:85%;
+  top:50%;
+  position: absolute;
+}
+.infosPortf col{
+  padding:0px !important;
+}
+.infosPortf p{
+  margin-bottom:0px;
+  color:white;
+}
+
+.search{
+  margin-left:-10px;
+}
+
+.bold{
+  font-weight:bold;
+}
+.portfolio .hov{
+  display:none;
+}
+.portfolio:hover .hov{
+  display:block;
 }
