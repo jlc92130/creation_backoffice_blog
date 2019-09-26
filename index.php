@@ -11,6 +11,36 @@
 </head>
 
 <body>
+
+
+
+  <section id="menu" class="bg-light">
+    <nav class="container navbar navbar-expand-lg bg-transparent navbar-dark">
+      <a href="#menu">
+        <img src="img/logo.png" alt="logo"/>
+      </a>
+
+      <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="row py-3 collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a class="nav-link" href="#offer">OFFER</a></li>
+              <li class="nav-item"><a class="nav-link" href="#feature">FEATURES</a></li>
+              <li class="nav-item"><a class="nav-link" href="#skill">SKILL</a></li>
+              <li class="nav-item"><a class="nav-link" href="#member">MEMBERS</a></li>
+              <li class="nav-item"><a class="nav-link" href="#price">PRICE</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
+              <li class="nav-item"><a class="nav-link fas fa-search fa-flip-horizontal" href="#" style="color:#00a99d;"></a></li>
+              <li class="nav-item"><a class="nav-link" href="#login" ><i onclick="document.getElementById('id01').style.display='block'" style="width:auto;" class="fas fa-user"></i></li>
+        </ul>
+      </div>
+
+      </nav>
+  </section>
+
+
   <!-- Header image -->
   <header id="header">
     <section id="logo" class="col-12 p-5">
@@ -18,34 +48,47 @@
     </section>
   </header>
 
+<!-- <<<<<<<<<<<<<<<<<<<<<<<<<HTML DU LOGIN >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> -->
+
+  <section>
+
+
+  <div id="id01" class="modal">
+
+  <form class="modal-content animate" action="/action_page.php" method="post">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <img src="img_avatar2.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <button type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+  </div>
+
+  </section>
+
   <main>
     <!-- Menu -->
-    <section id="menu" class="bg-light">
-      <nav class="container navbar navbar-expand-lg bg-transparent navbar-dark">
-        <a href="#menu">
-          <img src="img/logo.png" alt="logo"/>
-        </a>
 
-        <button class="navbar-toggler ml-auto custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="row py-3 collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="nav-link" href="#offer">OFFER</a></li>
-                <li class="nav-item"><a class="nav-link" href="#feature">FEATURES</a></li>
-                <li class="nav-item"><a class="nav-link" href="#skill">SKILL</a></li>
-                <li class="nav-item"><a class="nav-link" href="#member">MEMBERS</a></li>
-                <li class="nav-item"><a class="nav-link" href="#price">PRICE</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">CONTACT</a></li>
-                <li class="nav-item"><a class="nav-link fas fa-search fa-flip-horizontal" href="#" style="color:#00a99d;"></a></li>
-          </ul>
-        </div>
-      </nav>
-    </section>
 
     <!-- What we offer -->
-    <section id="offer" class="pt-5">
+    <!-- <section id="offer" class="pt-5">
       <div class="text-center">
         <h1 class="h3"><img src="img/doubleLines.png" class="hideSmall" /> <img src="img/arrow.png" /> <b>WHAT WE <span class="titleBlue">OFFER</span></b> <img src="img/arrow.png" class="rotate180" /> <img src="img/doubleLines.png" class="rotate180 hideSmall" /></h1>
         <p class="txt-light-grey">We offer our customers the best services & solutions, this is our main services list</p>
@@ -81,9 +124,16 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Section icon_1 -->
+
+
+
+
+
+
+
     <div class="section-nul text-center position-relative mt-5">
       <img class="position-absolute" src="img/s_bg_icon_1.png" />
       <img class="position-absolute" src="img/s_icon_1.png" />
