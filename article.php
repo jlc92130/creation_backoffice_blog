@@ -48,39 +48,68 @@ input[type=submit]:hover {
 
 
 
-<h3>ARTICLE</h3>
+<h3>NOUVEL ARTICLE</h3>
 
 <?php
-         include ("transfert.php");
-         if ( isset($_FILES['fic']) )
-         {
-             transfert();
-         }
-      ?>
+  var_dump($_REQUEST);
+  // include("connexion.php");
+  // include ("transfert.php");
+  // if ( isset($_FILES['fic']) )
+  // {
+  //     transfert();
+  // }
+  $title='';
+  $content='';
+  $fic='';
 
-<div class="row">
-  <div class="container, col-sm-6">
-    <form action="/action_page.php">
 
-      <label for="fname">TITLE</label>
-      <input type="text" id="fname" name="firstname">
+  if (!empty($_REQUEST['title']) && !empty($_REQUEST['content']) && !empty($_REQUEST['fic'])){
+    // if (length($_REQUEST['fic'])<40){
+      transfert();
+    // }
+    // else {
+    //   echo "Le nom de fichier est trop long";
+    //   require('formulaire.php');
+    // }
+  }
+  else {
+    if (!empty($_REQUEST['title'])) {
+      $title = $_REQUEST['title'];
+    }
+    if (!empty($_REQUEST['content'])) {
+      $content = $_REQUEST['content'];
+    }
+    if (!empty($_REQUEST['fic'])) {
+      $fic = $_REQUEST['fic'];
+    }
 
-      <label for="subject">CONTENT</label>
-      <textarea id="subject" name="subject" placeholder="" style="height:200px"></textarea>
+    echo "Merci de remplir tous les champs";
+    require("formulaire.php");
+  }
 
-      <label for="fname">IMAGE</label>
-      <textarea id="subject" name="subject"  style="height:200px"></textarea>
-    </form>
-  </div>
-  <div  class="col-sm-6">
-    <form enctype="multipart/form-data" action="#" method="post">
-      <input type="hidden" name="MAX_FILE_SIZE" value="800000" />    <!--taile maxi de l image 0.8 Mo  -->
-      <input type="file" name="fic" size=50 />
-      <input type="submit" value="send" />
-    </form>
+  function transfert() {
+     include("connexion.php");
+     $sql =  $conn->prepare( 'INSERT INTO `articles` (title,content,img) VALUES (?, ?, ?)') ;
+
+     $sql->execute(array($_REQUEST['title'], $_REQUEST['content'], $_REQUEST['fic']));
+     echo "l'article a bien été ajouté";
+  }
+
+?>
+
+  <!-- <div  class="col-sm-6"> -->
+    <!-- <form enctype="multipart/form-data" action="#" method="post"> -->
+
+    <!-- </form> -->
+
+    <?php
+    //
+    // $requete = "SELECT * FROM imagesbis";
+    // $exec = mysql_query($requete);
+    ?>
 
     <p><a href="liste.php">Liste</a></p>
-  </div>
+  <!-- </div> -->
 </div>
 
 </body>

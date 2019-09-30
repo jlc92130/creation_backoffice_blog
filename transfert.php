@@ -33,12 +33,10 @@
       // Il s'agit de récupérer le contenu binaire dans une variable.
       // Or, on ne peut pas passer le contenu d'un fichier directement dans une variable. Pour exécuter cette opération, nous allons utiliser la fonction file_get_contents
 
-        include ("connexion.php");
         $img_blob = file_get_contents ($_FILES['fic']['tmp_name']);
 
         // on affiche le contenu des informations dans la base Mysql
 
-        include ("connexion.php");
       $img_blob = file_get_contents ($_FILES['fic']['tmp_name']);
       $req = "INSERT INTO images (" .
                           "img_nom, img_taille, img_type, img_blob " .
@@ -47,7 +45,9 @@
                           "'" . $img_taille . "', " .
                           "'" . $img_type . "', " .
                           "'" . addslashes ($img_blob) . "') "; // N'oublions pas d'échapper le contenu binaire
-      $ret = mysql_query ($req) or die (mysql_error ());
-      return true;
+      $stmt = $conn->prepare ($req);
+
+      $rest= $stmt->execute($req);
+
     }
 ?>
