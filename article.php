@@ -52,6 +52,7 @@ input[type=submit]:hover {
 
 <?php
   var_dump($_REQUEST);
+  var_dump($_FILES);
   // include("connexion.php");
   // include ("transfert.php");
   // if ( isset($_FILES['fic']) )
@@ -63,7 +64,7 @@ input[type=submit]:hover {
   $fic='';
 
 
-  if (!empty($_REQUEST['title']) && !empty($_REQUEST['content']) && !empty($_REQUEST['fic'])){
+  if (!empty($_REQUEST['title']) && !empty($_REQUEST['content']) && !empty($_FILES['fic'])){
     // if (length($_REQUEST['fic'])<40){
       transfert();
     // }
@@ -88,14 +89,26 @@ input[type=submit]:hover {
   }
 
   function transfert() {
+    //envoi une image dans le dossier upload //
+    $result = move_uploaded_file($_FILES['fic']['tmp_name'], 'upload/'.$_FILES['fic']['name']);
+
+    if ($result) {
      include("connexion.php");
      $sql =  $conn->prepare( 'INSERT INTO `articles` (title,content,img) VALUES (?, ?, ?)') ;
+   }
+   else {
+     echo 'votre image n\'a pas ete uploaded';
+   }
 
-     $sql->execute(array($_REQUEST['title'], $_REQUEST['content'], $_REQUEST['fic']));
-     echo "l'article a bien été ajouté";
+// envoi les champs dans la BDD
+     $sql->execute(array($_REQUEST['title'], $_REQUEST['content'], $_FILES['fic']['name']));
+
+       header('Location: http://localhost/jl/maquette_starup/startuprr/');
   }
 
 ?>
+
+
 
   <!-- <div  class="col-sm-6"> -->
     <!-- <form enctype="multipart/form-data" action="#" method="post"> -->
@@ -108,7 +121,7 @@ input[type=submit]:hover {
     // $exec = mysql_query($requete);
     ?>
 
-    <p><a href="liste.php">Liste</a></p>
+  
   <!-- </div> -->
 </div>
 

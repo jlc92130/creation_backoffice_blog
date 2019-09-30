@@ -1,7 +1,7 @@
 <div class="row">
 
   <div class="container, col-sm-6">
-    <form action="" method="get">
+    <form enctype="multipart/form-data" action="" method="post">
 
       <label for="title">TITLE</label>
       <input type="text" id="fname" name="title" value=<?php echo $title; ?> >
