@@ -51,8 +51,6 @@ input[type=submit]:hover {
 <h3>NOUVEL ARTICLE</h3>
 
 <?php
-  var_dump($_REQUEST);
-  var_dump($_FILES);
   // include("connexion.php");
   // include ("transfert.php");
   // if ( isset($_FILES['fic']) )
@@ -63,7 +61,7 @@ input[type=submit]:hover {
   $content='';
   $fic='';
 
-
+// a chaque rechargement de page on verifie la condition
   if (!empty($_REQUEST['title']) && !empty($_REQUEST['content']) && !empty($_FILES['fic'])){
     // if (length($_REQUEST['fic'])<40){
       transfert();
@@ -75,7 +73,7 @@ input[type=submit]:hover {
   }
   else {
     if (!empty($_REQUEST['title'])) {
-      $title = $_REQUEST['title'];
+      $title = $_REQUEST['title'];          //on recupere le contenu du champs titre pour ne pas avoir a tout retaper apres avoir cliquer sur send//
     }
     if (!empty($_REQUEST['content'])) {
       $content = $_REQUEST['content'];
@@ -83,27 +81,30 @@ input[type=submit]:hover {
     if (!empty($_REQUEST['fic'])) {
       $fic = $_REQUEST['fic'];
     }
+    if (isset($_REQUEST['submit'])){
+      echo "Merci de remplir tous les champs";
+    }
 
-    echo "Merci de remplir tous les champs";
+// on appelle le script formulaire//
     require("formulaire.php");
   }
 
   function transfert() {
-    //envoi une image dans le dossier upload //
-    $result = move_uploaded_file($_FILES['fic']['tmp_name'], 'upload/'.$_FILES['fic']['name']);
+    //envoi une image uploadé d un dossier quelconque dans le dossier upload //
+    $result = move_uploaded_file($_FILES['fic']['tmp_name'], 'upload/'.$_FILES['fic']['name']);  // on deplace le fichier "$_FILES['fic']['tmp_name']"(notre image) dans le repertoire upload
 
-    if ($result) {
+    if ($result) {    // si il y a l image "$files['fic']['name']" dans le dossier upload
      include("connexion.php");
      $sql =  $conn->prepare( 'INSERT INTO `articles` (title,content,img) VALUES (?, ?, ?)') ;
    }
    else {
-     echo 'votre image n\'a pas ete uploaded';
+     echo 'votre image n\'a pas été uploadé';
    }
 
-// envoi les champs dans la BDD
+// envoi les champs dans la BDD //
      $sql->execute(array($_REQUEST['title'], $_REQUEST['content'], $_FILES['fic']['name']));
 
-       header('Location: http://localhost/jl/maquette_starup/startuprr/');
+       echo 'operation reussi';
   }
 
 ?>
@@ -121,7 +122,7 @@ input[type=submit]:hover {
     // $exec = mysql_query($requete);
     ?>
 
-  
+
   <!-- </div> -->
 </div>
 

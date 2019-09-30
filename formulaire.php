@@ -4,7 +4,7 @@
     <form enctype="multipart/form-data" action="" method="post">
 
       <label for="title">TITLE</label>
-      <input type="text" id="fname" name="title" value=<?php echo $title; ?> >
+      <input type="text" id="fname" name="title" value=<?php echo $title; ?> >   // on affiche le texte contenu dans la var title//
 
       <label for="content">CONTENT</label>
       <textarea id="subject" name="content" placeholder="" style="height:200px"  value=<?php echo $content; ?> ></textarea>
